@@ -1,13 +1,18 @@
 <template>
-  <RouterView />
+  <div>
+    <NavBar v-if="user"/>
+    <router-view />
+  </div>
 </template>
 
 <script setup>
-</script>
+import { ref, onMounted } from 'vue'
+import { auth } from './firebase'
+import NavBar from './components/NavBar.vue'
 
-<style>
-body {
-  margin: 0;
-  font-family: sans-serif;
-}
-</style>
+const user = ref(null)
+
+onMounted(() => {
+  auth.onAuthStateChanged(u => user.value = u)
+})
+</script>
