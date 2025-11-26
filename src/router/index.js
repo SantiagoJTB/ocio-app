@@ -17,8 +17,10 @@ const routes = [
   { path:'/matches', component: Matches, meta:{ requiresAuth:true } },
 ]
 
+import { createRouter, createWebHashHistory } from 'vue-router'
+
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),  // <-- usa hash mode
   routes
 })
 
