@@ -9,8 +9,8 @@
   "homepage": "https://santiagojtb.github.io/ocio-app",
   "scripts": {
     "preview": "vite preview",
-    "dev": "vite --config vite-config.js",
-    "build": "vite build --config vite-config.js",
+    "dev": "vite",
+    "build": "vite build",
     "serve": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
