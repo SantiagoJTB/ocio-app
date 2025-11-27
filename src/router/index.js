@@ -8,7 +8,6 @@ import Availability from '../views/Availability.vue'
 import Friends from '../views/Friends.vue'
 import Matches from '../views/Matches.vue'
 
-// Define las rutas primero
 const routes = [
   { path: '/login', component: Login },
   { path: '/register', component: Register },
@@ -19,13 +18,11 @@ const routes = [
   { path: '/matches', component: Matches, meta: { requiresAuth: true } },
 ]
 
-// Crear el router usando hash mode
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory(), // <-- hash mode para GitHub Pages
   routes
 })
 
-// Guard para rutas privadas
 router.beforeEach((to, from, next) => {
   const requiresAuth = to.meta.requiresAuth
   const currentUser = auth.currentUser
